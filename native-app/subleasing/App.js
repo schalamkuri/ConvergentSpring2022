@@ -1,13 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-
+import WelcomeScreen from './app/screens/WelcomeScreen';
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+  <WelcomeScreen/>
+    // <View style={styles.container}>
+    //   <Text>ham</Text>
+    //   <StatusBar style="auto" />
+    // </View>
+    
+    // <View style = {styles.container}>
+    //    <Text>ham</Text>
+    // </View>
   );
+  
 }
 
 const styles = StyleSheet.create({
