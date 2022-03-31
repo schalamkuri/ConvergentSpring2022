@@ -1,10 +1,20 @@
 import React from 'react';
 import {Text, View, StyleSheet, Image, ImageBackground, TextInput, TouchableOpacity, SafeAreaView} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import WelcomeScreen from './WelcomeScreen';
+import { useNavigation } from '@react-navigation/native';
+//import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import WelcomeScreen from './WelcomeScreen';
 
-function LoginScreen({navigation}) {
+function LoginScreen (props) {
+
+    const navigation = useNavigation();
+
+    // access data base and verify if valid username and password
+    // then allow to navigate to next page
+    var authenticate = () => {
+        
+        navigation.navigate("Home");
+    }
+
 
     const [username, onChangeUsername] = React.useState("");
     const [password, onChangePassword] = React.useState("");
@@ -33,9 +43,8 @@ function LoginScreen({navigation}) {
             />
             
             <TouchableOpacity style={styles.loginButton}
-            // onPress ={login}
-            >
-                
+            onPress ={authenticate}
+            > 
                 <Text style={styles.loginText}>
                     Login
                 </Text>
@@ -69,7 +78,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 5,
-        paddingVertical: 30,
+        paddingVertical: 50,
         paddingHorizontal: 30,
         shadowColor: '#000',
         shadowOffset: { width: 5, height: 4 },
@@ -89,7 +98,7 @@ const styles = StyleSheet.create({
     input: {
         flexDirection: "row",
         height: 40,
-        width: "50%",
+        //width: 5,
         margin: 10,
         //paddingVertical: 10,
         borderWidth: .75,
@@ -98,13 +107,15 @@ const styles = StyleSheet.create({
         borderRadius: 5,
       },
     generalButton: {
-        fontSize: 10,
+        fontSize: 15,
+        margin: 5,
     },
     loginButton: {
         //color: "white",
-        
         margin: 10,
+        marginBottom: 20,
         paddingVertical: 30,
+        //paddingBottom: 20,
         borderRadius: 7.5,
         backgroundColor: "black",
         paddingHorizontal: 50,
@@ -112,7 +123,7 @@ const styles = StyleSheet.create({
        
     },
     loginText: {
-        fontSize: 15,
+        fontSize: 20,
         color: "white",
     },
 
