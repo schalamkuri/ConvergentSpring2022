@@ -15,15 +15,23 @@ function WelcomeScreen(props) {
         navigation.navigate("Login");
     }
 
+    var listers = () => {
+        
+        navigation.navigate("Listings");
+    }
+
     const utBackground = require("../assets/ut2.jpeg");
 
     return (
 
-        <ImageBackground
-        style = {styles.background}
-        //resizeMode="cover"
-        source={utBackground}
-        >
+        // <ImageBackground
+        // style = {styles.background}
+        // //resizeMode="cover"
+        // source={utBackground}
+        // >
+        //</ImageBackground>
+        //
+        <View style={styles.background}>
         <Text style ={styles.title}
         >SUBLEASING FOR STUDENTS</Text>
         <Text style ={styles.subtitle}
@@ -34,15 +42,17 @@ function WelcomeScreen(props) {
                     Looking to rent?
                 </Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.choice}>
+        <TouchableOpacity style={styles.choice}
+        onPress={listers}> 
                 <Text style={styles.generalText}>
                     Looking to list?
                 </Text>
             </TouchableOpacity>
-        </ImageBackground>
+            </View>
         
     );
 }
+// 
 /*<View style = {styles.container}>
             <Text> SOMe text</Text>
         </View>
@@ -55,20 +65,22 @@ const styles = StyleSheet.create({
         // width: screenWidth,
         //justifyContent: "center",
         alignItems: "center",
-        opacity: .7,
+        //opacity: .7,
+        color: "#e77365",
         
     },
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#e77365',
         alignItems: 'center',
         justifyContent: 'center',
     },
     title :{
         fontWeight: "bold",
-        fontSize: 30,
+        fontSize: 25,
         opacity: 7,
         top: "40%",
+        fontFamily: "Didot",
         //flex: 1,
         //justifyContent: "center",
         //alignItems: "center",
@@ -76,33 +88,36 @@ const styles = StyleSheet.create({
     subtitle: {
         //fontWeight: "bold",
         //color: "grey",
-        fontSize: 25,
+        fontSize: 20,
         opacity: 7,
         top: "40%",
-        
+        fontFamily: "Didot",
+        marginBottom: 30,
         // justifyContent: "center",
         // alignItems: "center",
     },
     choice: {
+        //color: "blue",
         top: "40%",
         margin: 20,
         margin: 10,
         marginBottom: 20,
         paddingVertical: 30,
         //paddingBottom: 20,
-        borderRadius: 2,
+        borderRadius: 10,
         backgroundColor: "white",
         paddingHorizontal: 50,
         paddingVertical: 5,
         shadowColor: '#000',
         shadowOffset: { width: 5, height: 4 },
-        shadowOpacity: 0.25,
+        shadowOpacity: 0.5,
         shadowRadius: 5, 
     },
     generalText: {
-        //color: "white",
+        color: "#085bc7",
         fontSize: 25,
         fontWeight: "bold",
+        fontFamily: "Didot",
     }
 })
 
