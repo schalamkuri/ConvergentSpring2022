@@ -4,9 +4,9 @@ import { useNavigation } from '@react-navigation/native';
 //import { createNativeStackNavigator } from '@react-navigation/native-stack';
 //import WelcomeScreen from './WelcomeScreen';
 
-function LoginScreen (props) {
+function LoginScreen ({route, navigation}) {
 
-    const navigation = useNavigation();
+    //const navigation = useNavigation();
 
     // access data base and verify if valid username and password
     // then allow to navigate to next page

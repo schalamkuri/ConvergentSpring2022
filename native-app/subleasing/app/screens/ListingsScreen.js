@@ -100,29 +100,40 @@
 // */
 
 import * as React from "react";
-import { Text, View, StyleSheet, FlatList, TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 import Constants from "expo-constants";
-//import { TouchableHighlight } from "react-native-web";
+import { useNavigation } from "@react-navigation/native";
 
 // const list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11 ,12];
 const list = [
-  { color: "grey", name: "Quarters: Nueces House", },
-  { color: "grey", name: "The Block", },
-  { color: "grey", name: "The Castillian", },
-  { color: "grey", name: "The Callaway", },
-  { color: "black",name: "21 Pearl",},
-  { color: "white", name: "Skyloft", },
-  { color: "grey", name: "Lark",  },
+  { color: "grey", name: "Quarters: Nueces House", page: "Quarters" },
+  { color: "grey", name: "The Block", page: "Quarters" },
+  { color: "grey", name: "The Castillian", page: "Quarters" },
+  { color: "grey", name: "The Callaway", page: "Quarters" },
+  { color: "black", name: "21 Pearl", page: "Quarters" },
+  { color: "white", name: "Skyloft", page: "Quarters" },
+  { color: "grey", name: "Lark", page: "Quarters" },
 ];
-export default function App() {
+export default function ListingsScreen({route, navigation}) {
+  //const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <FlatList
         data={list}
         //numColumns={2}
         //keyExtractor={(item) => item}
-        renderItem={({item}) => (
-          <TouchableOpacity style={styles.card}>
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() => navigation.navigate("Result", item)}
+          >
             <Text style={styles.text}>{item.name}</Text>
           </TouchableOpacity>
         )}

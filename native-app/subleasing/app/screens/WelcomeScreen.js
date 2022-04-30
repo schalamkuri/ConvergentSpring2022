@@ -4,9 +4,9 @@ import { useNavigation } from '@react-navigation/native';
 // const screenHeight = Dimensions.get('window').height;
 // const screenWidth = Dimensions.get('window').width;
 
-function WelcomeScreen(props) {
+function WelcomeScreen({route, navigation}) {
 
-    const navigation = useNavigation();
+   // const navigation = useNavigation();
 
     // access data base and verify if valid username and password
     // then allow to navigate to next page
