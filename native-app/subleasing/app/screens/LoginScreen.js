@@ -12,7 +12,7 @@ function LoginScreen ({route, navigation}) {
     // then allow to navigate to next page
     var authenticate = () => {
         
-        navigation.navigate("Home");
+        navigation.navigate("Listings");
     }
 
 
@@ -29,6 +29,7 @@ function LoginScreen ({route, navigation}) {
             <TextInput
             style={styles.input}
             onChangeText={onChangeUsername}
+            placeholderTextColor="gray"
             value={username}
             placeholder="username"
             />
@@ -36,6 +37,7 @@ function LoginScreen ({route, navigation}) {
             style={styles.input}
             secureTextEntry={true}
             onChangeText={onChangePassword}
+            placeholderTextColor="gray"
             value={password}
             placeholder="password"
             //keyboardType="numeric"
@@ -105,6 +107,7 @@ const styles = StyleSheet.create({
         //padding: 10,
         paddingHorizontal: 60,
         borderRadius: 5,
+        //color: "black"
       },
     generalButton: {
         fontSize: 15,

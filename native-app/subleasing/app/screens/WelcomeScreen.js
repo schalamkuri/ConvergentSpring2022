@@ -52,11 +52,6 @@ function WelcomeScreen({route, navigation}) {
         
     );
 }
-// 
-/*<View style = {styles.container}>
-            <Text> SOMe text</Text>
-        </View>
-*/
 
 const styles = StyleSheet.create({
     background :{

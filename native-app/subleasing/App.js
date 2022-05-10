@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <StatusBar style= "auto" />
+      <StatusBar style='black'/>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Home" component={WelcomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
@@ -22,17 +22,6 @@ export default function App() {
         <Stack.Screen name="Result" component={ResultScreen} />
       </Stack.Navigator>
       </NavigationContainer>
-      
-  //<WelcomeScreen/>
-  // 
-    // <View style={styles.container}>
-    //   <Text>ham</Text>
-    //   <StatusBar style="auto" />
-    // </View>
-    
-    // <View style = {styles.container}>
-    //    <Text>ham</Text>
-    // </View>
   );
   
 }
